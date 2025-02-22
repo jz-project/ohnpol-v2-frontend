@@ -4,10 +4,11 @@ import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
 
 const viteConfig = defineConfig((env) => {
-  const isDevMode = env.mode.includes("development");
+  // const isDevMode = env.mode.includes("development");
 
   return {
-    base: isDevMode ? "/" : "/ohnpol-v2-frontend/",
+    base: "/",
+    // base: isDevMode ? "/" : "/",
     plugins: [
       react({
         jsxRuntime: "automatic",
