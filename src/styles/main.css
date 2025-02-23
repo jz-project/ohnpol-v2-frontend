@@ -1,6 +1,6 @@
-@import "./tailwind.css";
+@import './tailwind.css';
 
 body {
-  font-family: "Pretendard Variable", Pretendard;
-  padding: 1rem;
+  font-family: 'Pretendard Variable', Pretendard;
+  padding: 0;
 }
