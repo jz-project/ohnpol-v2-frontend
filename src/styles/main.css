@@ -1,2 +1,6 @@
 @import "./tailwind.css";
-@import "./common/base.css";
+
+body {
+  font-family: "Pretendard Variable", Pretendard;
+  padding: 1rem;
+}
