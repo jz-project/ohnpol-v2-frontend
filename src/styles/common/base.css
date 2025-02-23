@@ -6,6 +6,7 @@ body {
   font-family: "Pretendard Variable", Pretendard;
   font-size: 1.6rem; /* 16px */
   line-height: 1.5;
+  padding: 1rem;
 }
 
 nav ol,
@@ -19,7 +20,13 @@ nav a {
   text-decoration: none;
 }
 
-h1,h2,h3,h4,h5,h6,p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   overflow-wrap: break-word;
 }
 
@@ -29,7 +36,10 @@ hr {
   height: 0;
 }
 
-canvas,img,svg,video {
+canvas,
+img,
+svg,
+video {
   max-width: 100%;
 }
 
@@ -48,6 +58,6 @@ abbr[title] {
 
 :focus-visible {
   outline: 2.5px solid var(--focus, #0869dfc0);
-  outline-offset: .5px;
-  border-radius: 2px
+  outline-offset: 0.5px;
+  border-radius: 2px;
 }
