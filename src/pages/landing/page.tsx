@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 function LandingPage() {
   return (
     <div className="flex w-full h-screen min-w-[1000px]">
@@ -41,11 +43,14 @@ function LandingPage() {
               </button>
             </div>
             <div className="mt-4">
+              {/* 임시 라우팅. 회원가입 구현 후에는 editor로 라우트해야함 */}
+              <Link to="/main">
               <button
                 className="px-6 py-2 bg-gray-600 text-white rounded-lg"
               >
                 로그인 없이 폴꾸하기
               </button>
+              </Link>
             </div>
           </div>
         </div>
