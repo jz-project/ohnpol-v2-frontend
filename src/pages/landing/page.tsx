@@ -1,6 +1,44 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
+import LoginModal from '@/pages/landing/components/LoginModal';
+import JoinModal from '@/pages/landing/components/JoinModal';
+import Modal from 'react-modal';
 
 function LandingPage() {
+  const [isClickedLogin, setIsClickedLogin] = useState(false);
+  const [isClickedJoin, setIsClickedJoin] = useState(false);
+  
+  const onClickLogin = () => {
+    setIsClickedLogin((prev) => !prev);
+  };
+  const onClickJoin = () => {
+    setIsClickedJoin((prev) => !prev);
+  };
+  // 모달 스타일
+  const ModalStyles:ReactModal.Styles = {
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0,0,0, 0.7)',
+      zIndex: 10,
+    },
+    content: {
+      display: 'flex',
+      justifyContent: 'center',
+      background: 'white',
+      overflow: 'auto',
+      width: '450px',
+      height: '500px',
+      margin: 'auto auto',
+      WebkitOverflowScrolling: 'touch',
+      borderRadius: '15px',
+      outline: 'none',
+      zIndex: 10,
+    },
+  };
   return (
     <div className="flex w-full h-screen min-w-[1000px]">
       {/* 왼쪽 */}
@@ -30,17 +68,34 @@ function LandingPage() {
             <p className="mt-2 text-gray-600">함께 즐기는 덕질 생활 ‘온폴’</p>
             <div className="mt-6">
               <button
-                // onClick={}
+                onClick={onClickLogin}
                 className="m-2 px-4 py-2 border border-gray-500 rounded-lg bg-white text-gray-700 hover:brightness-90 active:brightness-75"
               >
                 로그인
               </button>
+              <Modal
+                isOpen={isClickedLogin}
+                style={ModalStyles}
+                onRequestClose={onClickLogin}
+                ariaHideApp={false}
+              >
+                <LoginModal />
+              </Modal>
               <button
-                // onClick={}
+                onClick={onClickJoin}
                 className="m-2 px-4 py-2 border border-gray-500 rounded-lg bg-white text-gray-700 hover:brightness-90 active:brightness-75"
               >
                 회원가입
               </button>
+              <Modal
+                isOpen={isClickedJoin}
+                style={ModalStyles}
+                onRequestClose={onClickJoin}
+                ariaHideApp={false}
+              >
+                <JoinModal />
+              </Modal>
+              
             </div>
             <div className="mt-4">
               {/* 임시 라우팅. 회원가입 구현 후에는 editor로 라우트해야함 */}
