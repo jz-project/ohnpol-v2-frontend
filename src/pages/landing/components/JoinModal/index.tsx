@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router';
 import { isEmail, isPassword } from "@/utils/validator";
+import FormInput from '@/components/FormInput';
 
 
 interface JoinFormData {
@@ -16,7 +18,12 @@ interface EventData {
   value: string;
 }
 
-const JoinModal: React.FC = () => {
+interface JoinModalProps {
+  closeModal: () => void;
+}
+
+const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<JoinFormData>({
     nickname: '',
     email: '',
@@ -42,7 +49,7 @@ const JoinModal: React.FC = () => {
         const valueLength = value.trim().length;
         setError((error) => ({
           ...error,
-          username:
+          nickname:
             valueLength < 2
               ? new Error('닉네임은 2글자 이상입력해야 합니다.')
               : null,
@@ -78,19 +85,22 @@ const JoinModal: React.FC = () => {
       }
     }
     
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData((formData) => ({
+      ...formData,
       [name]: value,
     }));
   };
   
-  const handleRegister = async (formData: FormData) => {
-    if (!isAllInputted) return;
-    if (!isAllValid) {
-      alert("입력 내용을 다시 확인해주세요.");
+  const handleRegister = (formData: FormData) => {
+    if (isAllValid) {
+      console.log(Object.fromEntries(formData))
+      console.log("회원가입 요청:", formData);
+      alert("회원가입 성공! 로그인하시기 바랍니다.");// todo: 실제 API 연결 시에 api요청.
+      closeModal();
+       // todo : 요청 성공할 시 라우팅
+    }else {
+      alert("입력 내용을 다시 한 번 확인해주세요.");
     }
-    console.log("회원가입 요청:", formData);
-    return alert("회원가입 성공!");
   };
   
   return (
@@ -104,40 +114,46 @@ const JoinModal: React.FC = () => {
         
         {/* 회원가입 폼 */}
         <form action={handleRegister} className="flex flex-col gap-4 w-full">
-          <input
+          <FormInput
             type="text"
             name="nickname"
             placeholder="닉네임"
             value={formData.nickname}
             onChange={handleChange}
             className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
+            hasError={error.nickname}
           />
           
-          <input
+          <FormInput
             type="text"
             name="email"
             placeholder="이메일"
             value={formData.email}
             onChange={handleChange}
             className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
+            hasError={error.email}
           />
           
-          <input
+          <FormInput
             type="password"
             name="password"
             placeholder="비밀번호"
             value={formData.password}
             onChange={handleChange}
             className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
+            hasError={error.password}
+            hasToggleButton
           />
           
-          <input
+          <FormInput
             type="password"
             name="passwordConfirm"
             placeholder="비밀번호 확인"
             value={formData.passwordConfirm}
             onChange={handleChange}
             className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
+            hasError={error.passwordConfirm}
+            hasToggleButton
           />
           
           {/* 가입하기 버튼 */}

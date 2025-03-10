@@ -15,7 +15,11 @@ interface EventData {
   value: string;
 }
 
-const LoginModal: React.FC = () => {
+interface LoginModalProps {
+  closeModal: () => void;
+}
+
+const LoginModal: React.FC<LoginModalProps> = ( { closeModal } ) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
@@ -67,8 +71,9 @@ const LoginModal: React.FC = () => {
       alert("입력 내용을 다시 한 번 확인해주세요.")
     }
     console.log("로그인 요청:", formData);
-    alert("로그인 성공!");// todo: 실제 API 연결 시에 api post요청.
+    alert("로그인 성공!");// todo: 실제 API 연결 시에 api요청.
     navigate('/main'); // todo : 요청 성공할 시 라우팅
+    closeModal();
   };
   
   return (

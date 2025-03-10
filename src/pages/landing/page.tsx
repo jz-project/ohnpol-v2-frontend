@@ -79,7 +79,7 @@ function LandingPage() {
                 onRequestClose={onClickLogin}
                 ariaHideApp={false}
               >
-                <LoginModal />
+                <LoginModal closeModal={onClickLogin} />
               </Modal>
               <button
                 onClick={onClickJoin}
@@ -93,7 +93,7 @@ function LandingPage() {
                 onRequestClose={onClickJoin}
                 ariaHideApp={false}
               >
-                <JoinModal />
+                <JoinModal closeModal={onClickJoin}/>
               </Modal>
               
             </div>
