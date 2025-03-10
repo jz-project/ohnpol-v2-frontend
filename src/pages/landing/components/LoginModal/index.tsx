@@ -94,6 +94,7 @@ const LoginModal: React.FC = () => {
             value={formData.password}
             onChange={handleChange}
             hasError={error.password}
+            hasToggleButton 
           />
           <div className="flex justify-center mt-4">
             <button
