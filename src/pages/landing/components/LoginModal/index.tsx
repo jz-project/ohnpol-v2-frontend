@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { isEmail, isPassword } from '@/utils/validator';
+import FormInput from '@/components/FormInput';
 
 
 interface LoginFormData {
@@ -77,22 +78,22 @@ const LoginModal: React.FC = () => {
         </div>
         
         {/* 로그인 폼 */}
-        <form action={handleLogin} className="flex flex-col item-center justify-center gap-4 w-full">
-          <input
-            type="text"
+        <form action={handleLogin} className="flex flex-col item-center justify-center gap-6 w-full">
+          <FormInput
+            type="email"
             name="email"
             placeholder="이메일"
             value={formData.email}
             onChange={handleChange}
-            className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
+            hasError={error.email}
           />
-          <input
+          <FormInput
             type="password"
             name="password"
             placeholder="비밀번호"
             value={formData.password}
             onChange={handleChange}
-            className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
+            hasError={error.password}
           />
           <div className="flex justify-center mt-4">
             <button
