@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router';
 import { isEmail, isPassword } from '@/utils/validator';
 import FormInput from '@/components/FormInput';
 
@@ -15,6 +16,7 @@ interface EventData {
 }
 
 const LoginModal: React.FC = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: '',
@@ -65,7 +67,8 @@ const LoginModal: React.FC = () => {
       alert("입력 내용을 다시 한 번 확인해주세요.")
     }
     console.log("로그인 요청:", formData);
-    return alert("로그인 성공!"); // 실제 API 연결 시에 api post요청.
+    alert("로그인 성공!");// todo: 실제 API 연결 시에 api post요청.
+    navigate('/main'); // todo : 요청 성공할 시 라우팅
   };
   
   return (
