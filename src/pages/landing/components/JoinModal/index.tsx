@@ -159,7 +159,7 @@ const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
             <button
               type="submit"
               disabled={!isAllInputted || !isAllValid}
-              className="w-24 h-10 bg-blue-600 text-white rounded-full hover:brightness-90 disabled:opacity-50"
+              className="w-24 h-10 bg-blue-600 text-white rounded-full hover:brightness-90 disabled:opacity-50 cursor-not-allowed"
             >
               가입하기
             </button>

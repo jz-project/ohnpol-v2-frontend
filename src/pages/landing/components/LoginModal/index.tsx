@@ -108,7 +108,7 @@ const LoginModal: React.FC<LoginModalProps> = ( { closeModal } ) => {
             <button
               type="submit"
               disabled={!isAllInputted || !isAllValid}
-              className="w-18 h-9 bg-blue-600 text-white rounded-full mt-4 hover:brightness-80 disabled:opacity-50"
+              className="w-18 h-9 bg-blue-600 text-white rounded-full mt-4 hover:brightness-80 disabled:opacity-50 cursor-not-allowed"
             >
               로그인
             </button>
