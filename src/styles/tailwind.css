@@ -21,13 +21,13 @@
   --color-error-200: #D7260D;
   
   /* Body */
-  --color-body-100: #FFFFFF;
-  --color-body-200: #FFFEFD;
-  --color-body-300: #F5F5F5;
-  --color-body-400: #F0F0F0;
-  --color-body-500: #CCCCCC;
-  --color-body-600: #898989;
-  --color-body-700: #242424;
+  --color-neutral-100: #FFFFFF;
+  --color-neutral-200: #FFFEFD;
+  --color-neutral-300: #F5F5F5;
+  --color-neutral-400: #F0F0F0;
+  --color-neutral-500: #CCCCCC;
+  --color-neutral-600: #898989;
+  --color-neutral-700: #242424;
   
 
 }
