@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router';
 import { isEmail, isPassword } from "@/utils/validator";
 import FormInput from '@/components/FormInput';
 
@@ -23,7 +22,6 @@ interface JoinModalProps {
 }
 
 const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState<JoinFormData>({
     nickname: '',
     email: '',
