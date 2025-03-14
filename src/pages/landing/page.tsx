@@ -46,11 +46,7 @@ function LandingPage() {
       <div className="flex flex-col w-1/2 h-full p-8 bg-blue-600">
         <header className="flex h-20">
           <div className="h-full">
-            <img
-              src="/assets/ohnpol_v2.svg"
-              alt="Onpol Logo"
-              className="h-10"
-            />
+            <img src="/ohnpol_v2.svg" alt="Onpol Logo" className="h-10" />
           </div>
         </header>
         <div className="flex flex-col items-left justify-center w-full h-full">

@@ -8,27 +8,27 @@ type FormInputProps = React.ComponentProps<'input'> & {
 };
 
 function FormInput({
-                     hasToggleButton = false,
-                     hasError,
-                      type = 'text',
-                     ...inputProps
-                   }: FormInputProps) {
+  hasToggleButton = false,
+  hasError,
+  type = 'text',
+  ...inputProps
+}: FormInputProps) {
   const id = useId();
   const descId = useId();
-  
+
   const [isOff, setIsOff] = useState(true);
-  
+
   const handleToggle = () => {
     setIsOff((isOff) => !isOff);
   };
   const inputType = type === 'password' && !isOff ? 'text' : type;
-  
+
   const buttonLabel = `패스워드 ${isOff ? '표시' : '감춤'}`;
-  
+
   return (
     <>
       <div>
-        <div className='flex'>
+        <div className="flex">
           <input
             id={id}
             type={inputType}
