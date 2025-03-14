@@ -4,13 +4,12 @@ export const isEmail = (value: string) => {
   return regExp.test(value);
 };
 
-
 export const isPassword = (
   value: string,
   { min = 6, max = 16, isStrong = false } = {}
 ) => {
   let regExp = null;
-  
+
   if (!isStrong) {
     regExp = new RegExp(`^(?=.*\\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{${min},${max}}$`);
   } else {
@@ -18,7 +17,7 @@ export const isPassword = (
       `^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$\`~!@$!%*#^?&\\(\\)\\-_=+]).{${min},${max}}$`
     );
   }
-  
+
   return regExp.test(value);
 };
 
