@@ -1,6 +1,10 @@
 @import './tailwind.css';
+@import './common/base.css';
+@import './common/normalize.css';
 
 body {
-  font-family: 'Pretendard Variable', Pretendard;
-  padding: 0;
+  width: 100%;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
 }

@@ -1,26 +1,28 @@
 import { NavLink } from 'react-router';
 import { tm } from '@/utils/tw-merge';
-import { OhnpolLogo } from '../ohnpol-logo';
+import { OhnpolLogo } from '../OhnpolLogo';
 
-function OhnpolHeader() {
+function Header() {
   return (
-    <nav>
-      <h2 className="sr-only">헤더와 메뉴</h2>
+    <nav
+      className={tm(
+        'w-full h-17 py-5 px-7',
+        'fixed top-0 bg-neutral-200 z-10',
+        'flex-1 justify-between items-center',
+        'text-lg font-medium'
+      )}
+    >
       <ul
-        className={tm(
-          'flex flex-row justify-between items-center',
-          'py-3 px-3',
-          'text-xm font-medium'
-        )}
+        className={tm('flex flex-row justify-between items-center', 'h-full')}
       >
         <li>
           <NavLink to="/main">
             <h2 className="sr-only">메인로고</h2>
-            <OhnpolLogo size={30} />
+            <OhnpolLogo size={38} />
           </NavLink>
         </li>
         <ul className="flex flex-row gap-7">
-          <ul className="flex flex-row gap-3">
+          <ul className="flex flex-row gap-4">
             <li>
               <NavLink to="/editor">편집기</NavLink>
             </li>
@@ -42,4 +44,4 @@ function OhnpolHeader() {
     </nav>
   );
 }
-export default OhnpolHeader;
+export default Header;
