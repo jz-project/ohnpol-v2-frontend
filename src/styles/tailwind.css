@@ -2,34 +2,32 @@
 
 @theme {
   /* Primary */
-  --color-primary-100: #82A2FF;
-  --color-primary-200: #6B77E2;
-  --color-primary-300: #3F70FF;
+  --color-primary-100: #82a2ff;
+  --color-primary-200: #6b77e2;
+  --color-primary-300: #3f70ff;
 
   /* Secondary */
-  --color-secondary-100: #CCD0DD;
-  --color-secondary-200: #B7C0D8;
-  --color-secondary-300: #827FA7;
-  --color-secondary-400: #6C698D;
-  
+  --color-secondary-100: #ccd0dd;
+  --color-secondary-200: #b7c0d8;
+  --color-secondary-300: #827fa7;
+  --color-secondary-400: #6c698d;
+
   /* Accent */
-  --color-success-100: #F0FAEE;
-  --color-success-200: #65CF55;
-  --color-warning-100: #FFFEE4;
-  --color-warning-200: #FFC84B;
-  --color-error-100: #FFE9E9;
-  --color-error-200: #D7260D;
-  
+  --color-success-100: #f0faee;
+  --color-success-200: #65cf55;
+  --color-warning-100: #fffee4;
+  --color-warning-200: #ffc84b;
+  --color-error-100: #ffe9e9;
+  --color-error-200: #d7260d;
+
   /* Body */
-  --color-neutral-100: #FFFFFF;
-  --color-neutral-200: #FFFEFD;
-  --color-neutral-300: #F5F5F5;
-  --color-neutral-400: #F0F0F0;
-  --color-neutral-500: #CCCCCC;
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #fffefd;
+  --color-neutral-300: #f5f5f5;
+  --color-neutral-400: #f0f0f0;
+  --color-neutral-500: #cccccc;
   --color-neutral-600: #898989;
   --color-neutral-700: #242424;
-  
-
 }
 
 @utility wrapper {

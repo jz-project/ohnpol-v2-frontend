@@ -9,6 +9,22 @@ const viteConfig = defineConfig((env) => {
   return {
     base: '/',
     // base: isDevMode ? "/" : "/",
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            react: [
+              'react',
+              'react-dom',
+              'react-router',
+              'react-router-dom',
+              'react-error-boundary',
+            ],
+            ecosystem: ['zustand', 'clsx', 'tailwind-merge'],
+          },
+        },
+      },
+    },
     plugins: [
       react({
         jsxRuntime: 'automatic',
