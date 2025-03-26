@@ -18,7 +18,7 @@ function Header() {
         <li>
           <NavLink to="/main">
             <h2 className="sr-only">메인로고</h2>
-            <OhnpolLogo size={38} />
+            <OhnpolLogo size={44} />
           </NavLink>
         </li>
         <ul className="flex flex-row gap-7">
