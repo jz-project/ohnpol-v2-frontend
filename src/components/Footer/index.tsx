@@ -1,7 +1,14 @@
+import { tm } from '@/utils/tw-merge';
+
 function Footer() {
   return (
-    <footer className="w-full bg-gray-800 text-white py-4 text-center">
-      <p>&copy; 2021 - All rights reserved</p>
+    <footer
+      className={tm(
+        'w-full text-neutral-100 py-4 text-center',
+        'bg-neutral-800'
+      )}
+    >
+      <p>&copy; 2025 - All rights reserved</p>
     </footer>
   );
 }
