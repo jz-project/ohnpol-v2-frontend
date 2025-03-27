@@ -46,7 +46,11 @@ function LandingPage() {
       <div className="flex flex-col w-1/2 h-full p-8 bg-blue-600">
         <header className="flex h-20">
           <div className="h-full">
-            <img src="/ohnpol_v2.svg" alt="Onpol Logo" className="h-10" />
+            <img
+              src="/assets/ohnpol_v2.svg"
+              alt="Onpol Logo"
+              className="h-10"
+            />
           </div>
         </header>
         <div className="flex flex-col items-left justify-center w-full h-full">
@@ -70,7 +74,7 @@ function LandingPage() {
               포카 컬렉션, 그리고 최애 자랑까지
             </h1>
             <p className="mt-2 text-gray-600">함께 즐기는 덕질 생활 ‘온폴’</p>
-            <div className="mt-6">
+            <div className="flex justify-center mt-6 gap-4">
               <button
                 onClick={onClickLogin}
                 className={tm(
