@@ -41,6 +41,8 @@ function Hot10() {
           nextEl: '.swiper-button-next',
           disabledClass: 'sr-only',
         }}
+        speed={600}
+        effect="fade"
         modules={[Navigation]}
       >
         <div className="swiper-button-prev" tabIndex={0} />

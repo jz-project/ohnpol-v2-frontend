@@ -1,6 +1,5 @@
 import { Artist, FavArtist } from '@/types/artist';
 import { tm } from '@/utils/tw-merge';
-import { useMemo } from 'react';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -16,29 +15,6 @@ function ArtistsSwiper({ artists, keyPrefix }: ArtistsSwiperProps) {
   //   1024: { slidesPerView: randomArtists.length >= 3 ? 3 : 2 },
   // };
 
-  const slidesPerViewConfig = useMemo(() => {
-    return {
-      0: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-      },
-      768: {
-        slidesPerView: 3,
-        slidesPerGroup: 1,
-      },
-      1024: {
-        slidesPerView: 4,
-        slidesPerGroup: 2,
-      },
-      1280: {
-        slidesPerView: 5,
-        slidesPerGroup: 3,
-      },
-    };
-  }, [artists.length]);
-
-  console.log(slidesPerViewConfig);
-
   return (
     <div className="artist-swiper h-full">
       <Swiper
@@ -50,6 +26,8 @@ function ArtistsSwiper({ artists, keyPrefix }: ArtistsSwiperProps) {
           nextEl: '.swiper-button-next',
           disabledClass: 'sr-only',
         }}
+        speed={600}
+        effect="fade"
         breakpoints={{
           0: {
             slidesPerView: 2,

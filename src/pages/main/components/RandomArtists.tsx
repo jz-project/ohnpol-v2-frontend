@@ -45,6 +45,8 @@ function RandomArtists() {
         </h2>
         <Swiper
           loop={false}
+          speed={600}
+          effect="fade"
           className="!h-full flex justify-center items-center"
           spaceBetween={20}
           navigation={{
