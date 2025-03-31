@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
-import OhnpolLayout from '@/layouts/common/layout';
+import Layout from '@/layouts/common/layout';
 import { lazy, Suspense } from 'react';
 
 const MainPage = lazy(() => import('@/pages/main/page'));
 const LandingPage = lazy(() => import('@/pages/landing/page'));
-
+const CommunityPage = lazy(() => import('@/pages/community/page'));
 function App() {
   return (
     //<ErrorBoundary FallbackComponent={PrintError}>
@@ -12,7 +12,10 @@ function App() {
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/main" element={<OhnpolLayout />}>
+          <Route path="/community" element={<Layout />}>
+            <Route index element={<CommunityPage />}></Route>
+          </Route>
+          <Route path="/main" element={<Layout />}>
             <Route index element={<MainPage />}></Route>
           </Route>
         </Routes>

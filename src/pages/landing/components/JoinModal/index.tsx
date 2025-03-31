@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { isEmail, isPassword } from "@/utils/validator";
+import React, { useState } from 'react';
+import { isEmail, isPassword } from '@/utils/validator';
 import FormInput from '@/components/FormInput';
-
 
 interface JoinFormData {
   nickname: string;
@@ -21,27 +20,27 @@ interface JoinModalProps {
   closeModal: () => void;
 }
 
-const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
+const JoinModal: React.FC<JoinModalProps> = ({ closeModal }) => {
   const [formData, setFormData] = useState<JoinFormData>({
     nickname: '',
     email: '',
     password: '',
     passwordConfirm: '',
   });
-  
+
   const [error, setError] = useState<JoinError>({
     nickname: null,
     email: null,
     password: null,
     passwordConfirm: null,
   });
-  
+
   const isAllInputted = Object.values(formData).every(Boolean);
   const isAllValid = Object.values(error).every((e) => e === null);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget as EventData;
-    
+
     switch (name) {
       case 'nickname': {
         const valueLength = value.trim().length;
@@ -66,7 +65,7 @@ const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
       case 'password': {
         setError((error) => ({
           ...error,
-          password: !isPassword(value.trim(), {min: 6})
+          password: !isPassword(value.trim(), { min: 6 })
             ? new Error('숫자, 영문 조합 6자리 이상 입력하세요.')
             : null,
         }));
@@ -82,34 +81,32 @@ const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
         }));
       }
     }
-    
+
     setFormData((formData) => ({
       ...formData,
       [name]: value,
     }));
   };
-  
+
   const handleRegister = (formData: FormData) => {
     if (isAllValid) {
-      console.log(Object.fromEntries(formData))
-      console.log("회원가입 요청:", formData);
-      alert("회원가입 성공! 로그인하시기 바랍니다.");// todo: 실제 API 연결 시에 api요청.
+      console.log(Object.fromEntries(formData));
+      console.log('회원가입 요청:', formData);
+      alert('회원가입 성공! 로그인하시기 바랍니다.'); // todo: 실제 API 연결 시에 api요청.
       closeModal();
-       // todo : 요청 성공할 시 라우팅
-    }else {
-      alert("입력 내용을 다시 한 번 확인해주세요.");
+      // todo : 요청 성공할 시 라우팅
+    } else {
+      alert('입력 내용을 다시 한 번 확인해주세요.');
     }
   };
-  
+
   return (
     <div className="flex items-center justify-center">
       <div className="p-8 bg-white rounded-lg text-center">
-        {/* 제목 */}
         <div className="mb-6 p-4">
           <p className="text-gray-600 pb-3">함께 즐기는 덕질 생활 '온폴'</p>
           <h1 className="text-3xl font-bold">회원가입</h1>
         </div>
-        
         {/* 회원가입 폼 */}
         <form action={handleRegister} className="flex flex-col gap-4 w-full">
           <FormInput
@@ -121,7 +118,6 @@ const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
             className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
             hasError={error.nickname}
           />
-          
           <FormInput
             type="text"
             name="email"
@@ -131,7 +127,6 @@ const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
             className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
             hasError={error.email}
           />
-          
           <FormInput
             type="password"
             name="password"
@@ -142,7 +137,6 @@ const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
             hasError={error.password}
             hasToggleButton
           />
-          
           <FormInput
             type="password"
             name="passwordConfirm"
@@ -153,7 +147,6 @@ const JoinModal: React.FC<JoinModalProps> = ( { closeModal } ) => {
             hasError={error.passwordConfirm}
             hasToggleButton
           />
-          
           {/* 가입하기 버튼 */}
           <div className="flex justify-center mt-4">
             <button
