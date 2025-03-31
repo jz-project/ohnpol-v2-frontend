@@ -14,7 +14,10 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/main" element={<OhnpolLayout />}>
             <Route index element={<MainPage />}></Route>
+            <Route path="community" element={<div>커뮤니티</div>} />
+            <Route path="mypage" element={<div>마이페이지</div>} />
           </Route>
+          <Route path="editor" element={<div>편집기</div>} />
         </Routes>
       </BrowserRouter>
     </Suspense>

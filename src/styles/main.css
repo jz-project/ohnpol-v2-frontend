@@ -1,10 +1,12 @@
 @import './tailwind.css';
 @import './common/base.css';
 @import './common/normalize.css';
+@import 'swiper/swiper-bundle.css';
 
 body {
   width: 100%;
   font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
+  color: #242424;
 }
