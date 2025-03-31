@@ -81,6 +81,9 @@ function Hot10() {
               >
                 <div className="flex items-center gap-1">
                   <span>
+                    {/* 좋아요 토글 기능은
+                    추후 실제 데이터 적용시 구현 예정
+                  */}
                     <img src="/assets/icons/liked.svg" alt="liked" />
                   </span>
                   <p>{card.likes}</p>

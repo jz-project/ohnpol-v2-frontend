@@ -9,4 +9,18 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: #242424;
+
+  /* 드래그 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 드래그 가능하게 하고 싶은 부분에는 클래스 사용 */
+.draggable {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }

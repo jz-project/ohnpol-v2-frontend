@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer
       className={tm(
-        'w-full text-neutral-100 py-4 text-center',
+        'w-full text-neutral-100 mt-17 py-4 text-center',
         'text-sm',
         'bg-neutral-800'
       )}

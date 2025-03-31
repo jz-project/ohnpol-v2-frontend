@@ -15,7 +15,7 @@ function RealTime() {
         <div
           key={post.postId}
           className={tm(
-            'max-w-[220px] min-w-[80px]  aspect-[165/233]',
+            'max-w-[210px] min-w-[75px]  aspect-[165/233]',
             'rounded-[15px] overflow-hidden',
             'ring-offset-shadow ring-offset-4 ring-neutral-200 ring-1',
             'transition-all duration-400 ease-in-out',

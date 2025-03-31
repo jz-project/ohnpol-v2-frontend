@@ -1,5 +1,6 @@
 import FavArtists from '@/pages/main/components/FavArtists';
 import Hot10 from '@/pages/main/components/Hot10';
+import PopularCollection from '@/pages/main/components/HotCollection';
 import MainBanner from '@/pages/main/components/MainBanner';
 import RandomArtists from '@/pages/main/components/RandomArtists';
 import RealTime from '@/pages/main/components/RealTime';
@@ -19,7 +20,7 @@ function MainPage() {
       </section>
 
       {/* 메인 컨텐츠 */}
-      <section className="w-full flex flex-col py-10 pl-7 gap-10">
+      <section className="w-full flex flex-col py-20 pl-7 gap-10">
         <article className="main-content">
           <h2>나의 최애 아티스트</h2>
           <FavArtists />
@@ -38,6 +39,7 @@ function MainPage() {
         <section className={tm('grid grid-cols-2 gap-7 h-full', ' mr-7')}>
           <article className="main-content col-span-1">
             <h2>뜨는 컬렉션</h2>
+            <PopularCollection />
           </article>
           <article className="main-content col-span-1 flex justify-center">
             <h2>모든 아티스트</h2>

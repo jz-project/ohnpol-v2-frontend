@@ -1,6 +1,6 @@
 import { MainBanners } from '@/data/banners';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Keyboard, Pagination } from 'swiper/modules';
+import { Keyboard, Pagination, Autoplay } from 'swiper/modules';
 
 function MainBanner() {
   return (
@@ -9,8 +9,14 @@ function MainBanner() {
         className="w-full h-[calc(100vw*0.3)]"
         slidesPerView={1}
         loop={true}
-        modules={[Pagination, Keyboard]}
+        modules={[Pagination, Keyboard, Autoplay]}
+        autoplay={{
+          delay: 8000,
+          disableOnInteraction: false,
+        }}
         keyboard={{ enabled: true }}
+        speed={1500}
+        effect="fade"
         pagination={{
           clickable: true,
           renderBullet: (index, className) => {
