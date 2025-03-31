@@ -43,7 +43,7 @@ function LandingPage() {
   return (
     <div className="flex w-full h-screen min-w-[1000px]">
       {/* 왼쪽 */}
-      <div className="flex flex-col w-1/2 h-full p-8 bg-blue-600">
+      <div className="flex flex-col w-1/2 h-full p-8 bg-primary-300">
         <header className="flex h-20">
           <div className="h-full">
             <img
