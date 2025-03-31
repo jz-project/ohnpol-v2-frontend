@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { IconLike, IconLikeEmpty } from '@/components/IconLike';
+import { IconLike } from '@/components/IconLike'; //todo : IconLikeEmpty 추가
 
 interface PostItem {
   postId: number;
@@ -18,7 +17,7 @@ interface PostProps {
 }
 
 const Post: React.FC<PostProps> = ({ item }) => {
-  const [postLikeQuant, setPostLikeQuant] = useState<number>(item.likeQuant);
+  const postLikeQuant = item.likeQuant; //todo: 추후 useState로 관리
 
   // const handleClickLikeIcon = async () => {
   //   try {
@@ -61,10 +60,9 @@ const Post: React.FC<PostProps> = ({ item }) => {
           </div>
         </div>
 
-        {/*todo : toggle기능 추가*/}
         {/* 좋아요 */}
         <div className="flex items-center w-1/2 gap-[5%] text-[180%] font-bold">
-          <IconLike />
+          <IconLike /> {/*todo : toggle기능 추가*/}
           <span>{postLikeQuant}</span>
         </div>
       </div>
