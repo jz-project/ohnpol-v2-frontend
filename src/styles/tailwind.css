@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+/* 디자인 토큰 */
 @theme {
   /* Primary */
   --color-primary-100: #82a2ff;
@@ -28,8 +29,80 @@
   --color-neutral-500: #cccccc;
   --color-neutral-600: #898989;
   --color-neutral-700: #242424;
+
+  /* Text */
+  --text-middle: 20px;
+  --font-weight-middle: 700;
 }
 
-@utility wrapper {
-  @apply min-w-80 max-w-180 mx-auto;
+/* 스와이퍼 */
+@layer swiper {
+  /* 메인페이지 */
+  /* 배너 */
+  .main-banner-slide {
+    @apply flex items-center justify-center;
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    @apply !bg-primary-300;
+  }
+
+  /* 최애 아티스트 */
+  .artist-swiper {
+    /* 스와이퍼 래퍼 */
+    .swiper-wrapper {
+      @apply items-stretch flex p-0 overflow-visible;
+    }
+  }
+
+  /* 네비게이션 버튼 */
+  .swiper-button-next {
+    @apply !right-0;
+  }
+  .swiper-button-prev {
+    @apply !left-0;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply !h-[1/2] top-[50%] translate-y-[-40%];
+    @apply !text-neutral-200 rounded-full !font-bold opacity-0;
+    @apply bg-neutral-600/60;
+    @apply transition-opacity duration-300 ease-in-out;
+
+    &:hover {
+      @apply opacity-80;
+    }
+
+    &:active {
+      @apply opacity-100;
+    }
+
+    &::after {
+      @apply !text-2xl;
+    }
+  }
+}
+
+/* 컴포넌트 */
+@layer components {
+  /* 메인페이지 컨텐츠 */
+  .main-content {
+    @apply flex flex-col gap-4;
+
+    h2 {
+      @apply text-[28px] font-extrabold;
+    }
+  }
+
+  /* 헤더 상단 네비게이션 바 메뉴 */
+  nav {
+    .nav-menu {
+      &:hover {
+        @apply text-primary-300;
+      }
+    }
+  }
 }
