@@ -11,10 +11,12 @@ function App() {
     <Suspense fallback={<div role="status">Loading...</div>}>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
-          <Route path="/onboarding" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route element={<Layout />}>
-            <Route path="/" element={<MainPage />} />
+            <Route path="main" element={<MainPage />} />
             <Route path="community" element={<CommunityPage />} />
+            <Route path="mypage" element={<div>마이페이지</div>} />
+            <Route path="editor" element={<div>편집기</div>} />
           </Route>
         </Routes>
       </BrowserRouter>

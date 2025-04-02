@@ -17,7 +17,7 @@ function Header() {
           className={tm('flex flex-row justify-between items-center', 'h-full')}
         >
           <li>
-            <NavLink to="/">
+            <NavLink to="/main">
               <h2 className="sr-only">메인로고</h2>
               <OhnpolLogo size={44} />
             </NavLink>
@@ -34,7 +34,7 @@ function Header() {
                 <NavLink to="/mypage">마이페이지</NavLink>
               </li>
               <li>
-                <NavLink to="/onboarding">로그아웃</NavLink>
+                <NavLink to="/">로그아웃</NavLink>
               </li>
             </ul>
             <li>
