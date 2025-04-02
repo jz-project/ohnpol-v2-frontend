@@ -1,50 +1,23 @@
 import { NavLink } from 'react-router';
 import { tm } from '@/utils/tw-merge';
 import { OhnpolLogo } from '../OhnpolLogo';
-import { useEffect, useState } from 'react';
 
-function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true); // 스크롤이 50px 이상 내리면 블러 처리
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+function EditorPageHeader() {
   return (
     <header
       className={tm(
         'w-full h-17 py-5 px-5',
         'fixed top-0 bg-neutral-200 z-10',
         'flex justify-center items-center',
-        'text-[1.1rem] font-middle',
-        'transition-all duration-700 ease-in-out',
-        `${isScrolled ? 'backdrop-blur-lg' : 'backdrop-blur-none'}`
+        'text-[1.1rem] font-middle'
       )}
-      style={{
-        backgroundColor: isScrolled
-          ? 'rgba(255, 255, 255, 0.7)'
-          : 'transparent',
-      }}
     >
       <nav className={tm('flex-1 justify-between items-center')}>
         <ul
           className={tm('flex flex-row justify-between items-center', 'h-full')}
         >
           <li>
-            <NavLink to="/main">
+            <NavLink to="/">
               <h2 className="sr-only">메인로고</h2>
               <OhnpolLogo size={42} />
             </NavLink>
@@ -81,4 +54,4 @@ function Header() {
     </header>
   );
 }
-export default Header;
+export default EditorPageHeader;

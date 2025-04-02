@@ -16,8 +16,8 @@ function App() {
             <Route path="main" element={<MainPage />} />
             <Route path="community" element={<CommunityPage />} />
             <Route path="mypage" element={<div>마이페이지</div>} />
-            <Route path="editor" element={<div>편집기</div>} />
           </Route>
+          <Route path="editor" element={<div>편집기</div>} />
         </Routes>
       </BrowserRouter>
     </Suspense>
