@@ -1,12 +1,65 @@
 import { useState } from 'react';
-import ArtistProfile from '@/components/ArtistProfile';
+import ArtistProfile from './components/ArtistProfile';
 import Header from '@/components/Header';
 import artistImage from '@/temp/images/방탄소년단.webp';
 import allPost from '@/temp/community/allPost.ts';
 import memberProfile from '@/temp/community/memberProfile.ts';
+import Modal from 'react-modal';
+import Post from '@/components/Post';
 
 function CommunityPage() {
   const [clickedMember, setClickedMember] = useState<string | null>(null);
+  const [clickedPost, setClickedPost] = useState(0);
+  const [isClickedPost, setIsClickedPost] = useState(false);
+
+  const closePostModal = () => {
+    setIsClickedPost(false);
+  };
+
+  const getClickedPostInfo = (postId: number) => {
+    const postInfo = allPost.find((item) => item.postId === postId);
+    console.log(postInfo);
+
+    return {
+      postId: postInfo?.postId ?? 0,
+      polaroid: postInfo?.polaroid ?? '',
+      nickname: postInfo?.nickname ?? 'Unknown',
+      enterComp: postInfo?.enterComp ?? 'Unknown',
+      groupName: postInfo?.groupName ?? 'Unknown',
+      memberName: postInfo?.memberName ?? 'Unknown',
+      albumName: postInfo?.albumName ?? 'Unknown',
+      likeQuant: postInfo?.likeQuant ?? 0,
+      userId: postInfo?.userId ?? 0,
+    };
+  };
+
+  const postModalStyle: ReactModal.Styles = {
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0,0,0, 0.5)',
+      zIndex: 999,
+    },
+    content: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      background: 'white',
+      overflow: 'auto',
+      width: 'fit-content',
+      height: 'fit-content',
+      margin: 'auto auto',
+      WebkitOverflowScrolling: 'touch',
+      WebkitUserSelect: 'none',
+      borderRadius: '48px',
+      outline: 'none',
+      border: '0',
+      padding: '0',
+    },
+  };
 
   return (
     <>
@@ -61,7 +114,10 @@ function CommunityPage() {
                   key={`allPost_${item.postId}`}
                   className="flex justify-center items-center w-[180px] h-[261px] m-2 rounded-[20px] border border-gray-300 bg-gray-300 shadow-lg overflow-hidden cursor-pointer transition-transform duration-100 hover:scale-110"
                   onClick={() => {
-                    // setClickedPost(item.postId);
+                    console.log('clickedMember is null');
+                    setClickedPost(item.postId);
+                    console.log(item.postId);
+                    setIsClickedPost(true);
                   }}
                 >
                   <img
@@ -80,7 +136,12 @@ function CommunityPage() {
                 <div
                   key={`memberPost_${item.postId}`}
                   className="flex justify-center items-center w-[180px] h-[261px] m-2 rounded-[20px] border border-gray-300 bg-gray-300 shadow-lg overflow-hidden cursor-pointer transition-transform duration-100 hover:scale-110"
-                  // onClick={() => {}}
+                  onClick={() => {
+                    console.log('clickedMember is', clickedMember);
+                    setClickedPost(item.postId);
+                    console.log(item.postId);
+                    setIsClickedPost(true);
+                  }}
                 >
                   <img
                     src={item.polaroid && item.polaroid}
@@ -90,6 +151,14 @@ function CommunityPage() {
                 </div>
               ))
             )}
+            <Modal
+              isOpen={isClickedPost}
+              onRequestClose={closePostModal}
+              ariaHideApp={false}
+              style={postModalStyle}
+            >
+              <Post item={getClickedPostInfo(clickedPost)} />
+            </Modal>
           </div>
         </div>
       </div>
