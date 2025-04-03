@@ -57,12 +57,12 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-menu" to="/main/community">
+                <NavLink className="nav-menu" to="/community">
                   커뮤니티
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-menu" to="/main/mypage">
+                <NavLink className="nav-menu" to="/mypage">
                   마이페이지
                 </NavLink>
               </li>
