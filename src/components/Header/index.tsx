@@ -57,7 +57,7 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-menu" to="/community">
+                <NavLink className="nav-menu" to="/all-artist">
                   커뮤니티
                 </NavLink>
               </li>

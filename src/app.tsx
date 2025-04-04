@@ -5,6 +5,7 @@ import { lazy, Suspense } from 'react';
 const MainPage = lazy(() => import('@/pages/main/page'));
 const LandingPage = lazy(() => import('@/pages/landing/page'));
 const CommunityPage = lazy(() => import('@/pages/community/page'));
+const AllArtistPage = lazy(() => import('@/pages/all-artist/page'));
 function App() {
   return (
     //<ErrorBoundary FallbackComponent={PrintError}>
@@ -14,7 +15,11 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route element={<Layout />}>
             <Route path="main" element={<MainPage />} />
-            <Route path="community" element={<CommunityPage />} />
+            <Route path="all-artist" element={<AllArtistPage />} />
+            <Route
+              path="all-artist/community/:artistId"
+              element={<CommunityPage />}
+            />
             <Route path="mypage" element={<div>마이페이지</div>} />
           </Route>
           <Route path="editor" element={<div>편집기</div>} />
