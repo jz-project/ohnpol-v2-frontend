@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { isEmail, isPassword } from '@/utils/validator';
 import FormInput from '@/components/FormInput';
 
@@ -37,6 +37,8 @@ const JoinModal: React.FC<JoinModalProps> = ({ closeModal }) => {
 
   const isAllInputted = Object.values(formData).every(Boolean);
   const isAllValid = Object.values(error).every((e) => e === null);
+
+  const nicknameRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget as EventData;
@@ -100,6 +102,10 @@ const JoinModal: React.FC<JoinModalProps> = ({ closeModal }) => {
     }
   };
 
+  useEffect(() => {
+    nicknameRef.current?.focus();
+  }, []);
+
   return (
     <div className="flex items-center justify-center">
       <div className="p-8 bg-white rounded-lg text-center">
@@ -117,6 +123,7 @@ const JoinModal: React.FC<JoinModalProps> = ({ closeModal }) => {
             onChange={handleChange}
             className="w-60 h-9 px-4 rounded-full bg-gray-200 border-none"
             hasError={error.nickname}
+            ref={nicknameRef}
           />
           <FormInput
             type="text"
