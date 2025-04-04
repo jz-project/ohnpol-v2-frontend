@@ -1,7 +1,7 @@
 export interface Artist {
   groupName: string;
   photo: string;
-  entertainmentCompany: string;
+  enterComp: string;
 }
 
 export interface FavArtist {
