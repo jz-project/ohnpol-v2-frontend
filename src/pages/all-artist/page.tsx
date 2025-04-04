@@ -41,7 +41,7 @@ function AllArtistPage() {
           <h2>모든 아티스트</h2>
           {groupedArtist.map(([enterComp, artist]) => (
             <>
-              <h2>{enterComp}</h2>
+              <h2 className="font-bold text-[23px] mb-2 ml-2">{enterComp}</h2>
               <ArtistsSwiper
                 artists={artist}
                 keyPrefix={`all-artist-${enterComp}`}
