@@ -1,4 +1,4 @@
-export const artists = [
+export const allArtistList = [
   {
     enterComp: 'SM',
     groupName: '하츠투하츠',
