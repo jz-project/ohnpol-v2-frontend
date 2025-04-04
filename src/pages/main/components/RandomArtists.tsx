@@ -1,4 +1,4 @@
-import { artists } from '@/data/artists';
+import { artists } from '@/temp/artists.ts';
 import { tm } from '@/utils/tw-merge';
 import { useMemo } from 'react';
 import { Navigation } from 'swiper/modules';
@@ -9,10 +9,10 @@ function RandomArtists() {
   // 나중에는 API로 처리할 예정
   const artistsByEntertainment = artists.reduce(
     (acc, artist) => {
-      if (!acc[artist.entertainmentCompany]) {
-        acc[artist.entertainmentCompany] = [];
+      if (!acc[artist.enterComp]) {
+        acc[artist.enterComp] = [];
       }
-      acc[artist.entertainmentCompany].push(artist);
+      acc[artist.enterComp].push(artist);
       return acc;
     },
     {} as Record<string, typeof artists>
@@ -41,7 +41,7 @@ function RandomArtists() {
     return (
       <div className="w-full  bg-neutral-500 rounded-[15px] p-7">
         <h2 className="font-bold text-[23px] mb-2 text-left">
-          {randomArtists?.[0]?.entertainmentCompany ?? '소속사 없음'}
+          {randomArtists?.[0]?.enterComp ?? '소속사 없음'}
         </h2>
         <Swiper
           loop={false}
