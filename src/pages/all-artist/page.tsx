@@ -1,7 +1,7 @@
 import FavArtists from '@/pages/main/components/FavArtists.tsx';
 import Title from '@/layouts/common/title.tsx';
 import ArtistsSwiper from '@/components/ArtistsSwiper';
-import { allArtistList } from '@/temp/artists.ts';
+import { allArtistList } from '@/temp/allArtistList.ts';
 import { Artist } from '@/types/artist.ts';
 
 function AllArtistPage() {

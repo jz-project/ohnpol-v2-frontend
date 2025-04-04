@@ -1,4 +1,4 @@
-import { allArtistList } from '@/temp/artists.ts';
+import { allArtistList } from '@/temp/allArtistList.ts';
 import { tm } from '@/utils/tw-merge';
 import { useMemo } from 'react';
 import { Navigation } from 'swiper/modules';

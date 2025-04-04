@@ -1,5 +1,5 @@
 import ArtistsSwiper from '@/components/ArtistsSwiper';
-import { favArtists } from '@/temp/artists.ts';
+import { favArtists } from '@/temp/allArtistList.ts';
 import { FavArtist } from '@/types/artist';
 import EmptyText from '../../../components/EmptyText';
 
