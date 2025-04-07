@@ -1,4 +1,4 @@
-import { artists } from '@/data/artists';
+import { allArtistList } from '@/temp/allArtistList.ts';
 import { tm } from '@/utils/tw-merge';
 import { useMemo } from 'react';
 import { Navigation } from 'swiper/modules';
@@ -7,15 +7,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 function RandomArtists() {
   // 아티스트를 소속사별로 객체로 정리
   // 나중에는 API로 처리할 예정
-  const artistsByEntertainment = artists.reduce(
+  const artistsByEntertainment = allArtistList.reduce(
     (acc, artist) => {
-      if (!acc[artist.entertainmentCompany]) {
-        acc[artist.entertainmentCompany] = [];
+      if (!acc[artist.enterComp]) {
+        acc[artist.enterComp] = [];
       }
-      acc[artist.entertainmentCompany].push(artist);
+      acc[artist.enterComp].push(artist);
       return acc;
     },
-    {} as Record<string, typeof artists>
+    {} as Record<string, typeof allArtistList>
   );
 
   // 랜덤으로 소속사 뽑기
@@ -41,7 +41,7 @@ function RandomArtists() {
     return (
       <div className="w-full  bg-neutral-500 rounded-[15px] p-7">
         <h2 className="font-bold text-[23px] mb-2 text-left">
-          {randomArtists?.[0]?.entertainmentCompany ?? '소속사 없음'}
+          {randomArtists?.[0]?.enterComp ?? '소속사 없음'}
         </h2>
         <Swiper
           loop={false}

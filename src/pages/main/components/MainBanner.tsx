@@ -1,4 +1,4 @@
-import { MainBanners } from '@/data/banners';
+import { MainBanners } from '@/temp/banners.ts';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard, Pagination, Autoplay } from 'swiper/modules';
 

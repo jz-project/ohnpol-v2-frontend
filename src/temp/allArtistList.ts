@@ -1,26 +1,26 @@
-export const artists = [
+export const allArtistList = [
   {
-    entertainmentCompany: 'SM',
+    enterComp: 'SM',
     groupName: '하츠투하츠',
     photo: '/assets/artists/hearts2hearts.webp',
   },
   {
-    entertainmentCompany: 'SM',
+    enterComp: 'SM',
     groupName: '라이즈',
     photo: '/assets/artists/riize.webp',
   },
   {
-    entertainmentCompany: 'SM',
+    enterComp: 'SM',
     groupName: '에스파',
     photo: '/assets/artists/aespa.webp',
   },
   {
-    entertainmentCompany: 'BIGHIT MUSIC',
+    enterComp: 'BIGHIT MUSIC',
     groupName: '투모로우바이투게더',
     photo: '/assets/artists/txt.webp',
   },
   {
-    entertainmentCompany: 'BIGHIT MUSIC',
+    enterComp: 'BIGHIT MUSIC',
     groupName: '방탄소년단',
     photo: '/assets/artists/bts.webp',
   },
