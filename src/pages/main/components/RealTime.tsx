@@ -1,4 +1,4 @@
-import { posts } from '@/data/posts';
+import { posts } from '@/temp/posts.ts';
 import { tm } from '@/utils/tw-merge';
 
 function RealTime() {

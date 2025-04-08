@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { isEmail, isPassword } from '@/utils/validator';
 import FormInput from '@/components/FormInput';
@@ -28,6 +28,8 @@ const LoginModal: React.FC<LoginModalProps> = ({ closeModal }) => {
     email: null,
     password: null,
   });
+
+  const emailRef = useRef<HTMLInputElement>(null);
 
   const isAllInputted =
     formData.email.length > 0 && formData.password.length > 0;
@@ -75,6 +77,10 @@ const LoginModal: React.FC<LoginModalProps> = ({ closeModal }) => {
     closeModal();
   };
 
+  useEffect(() => {
+    emailRef.current?.focus();
+  }, []);
+
   return (
     <div className="flex items-center justify-center">
       <div className="p-8 bg-white rounded-lg text-center">
@@ -94,6 +100,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ closeModal }) => {
             value={formData.email}
             onChange={handleChange}
             hasError={error.email}
+            ref={emailRef}
           />
           <FormInput
             type="password"

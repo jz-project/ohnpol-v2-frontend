@@ -2,8 +2,8 @@ import { useState } from 'react';
 import ArtistProfile from './components/ArtistProfile';
 import Header from '@/components/Header';
 import artistImage from '@/temp/images/방탄소년단.webp';
-import allPost from '@/temp/community/allPost.ts';
-import memberProfile from '@/temp/community/memberProfile.ts';
+import allPost from '@/temp/allPost.ts';
+import memberProfile from '@/temp/memberProfile.ts';
 import Modal from 'react-modal';
 import Post from '@/components/Post';
 

@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { tm } from '@/utils/tw-merge';
-import { posts } from '@/data/posts';
+import { posts } from '@/temp/posts.ts';
 import { Post } from '@/types/post';
 
 function Hot10() {
