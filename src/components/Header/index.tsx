@@ -27,7 +27,7 @@ function Header() {
     <header
       className={tm(
         'w-full h-17 py-5 px-5',
-        'fixed top-0 bg-neutral-200 z-10',
+        'fixed top-0 left-0 bg-neutral-200 z-10',
         'flex justify-center items-center',
         'text-[1.1rem] font-middle',
         'transition-all duration-700 ease-in-out',
