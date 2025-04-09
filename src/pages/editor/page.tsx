@@ -45,7 +45,8 @@ function Editor() {
             <div
               className={tm(
                 'border-2 border-dashed border-secondary-400',
-                'w-full max-w-[40vh] aspect-[57/87]',
+                'w-full max-w-[40vh] min-w-[220px] min-h-[250px] aspect-[57/87]',
+                'mt-15',
                 'flex items-center justify-center'
               )}
             >
