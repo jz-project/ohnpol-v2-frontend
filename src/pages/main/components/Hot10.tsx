@@ -63,7 +63,7 @@ function Hot10() {
             >
               <img
                 className={tm(
-                  'w-full aspect-[165/233]',
+                  'w-full h-full aspect-[57/87]',
                   'overflow-hidden',
                   'rounded-[15px]',
                   'object-cover',

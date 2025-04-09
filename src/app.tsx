@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router';
 import Layout from '@/layouts/common/layout';
 import { lazy, Suspense } from 'react';
 import ScrollToTop from '@/layouts/common/scroll-to-top.tsx';
+import Editor from './pages/editor/page';
 
 const MainPage = lazy(() => import('@/pages/main/page'));
 const LandingPage = lazy(() => import('@/pages/landing/page'));
@@ -24,7 +25,7 @@ function App() {
             />
             <Route path="mypage" element={<div>마이페이지</div>} />
           </Route>
-          <Route path="editor" element={<div>편집기</div>} />
+          <Route path="editor" element={<Editor />} />
         </Routes>
       </BrowserRouter>
     </Suspense>

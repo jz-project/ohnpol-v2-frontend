@@ -105,4 +105,67 @@
       }
     }
   }
+
+  /* 편집기 페이지 */
+  .editor_left-buttons,
+  .editor_right-buttons {
+    button {
+      @apply bg-neutral-50 text-neutral-950;
+      @apply flex justify-center items-center;
+      @apply py-2 px-4 rounded-t-2xl;
+      @apply w-fit text-nowrap;
+    }
+
+    button:disabled {
+      @apply !cursor-default;
+      @apply bg-secondary-100 text-neutral-600;
+    }
+
+    button:not(:disabled):hover {
+      @apply bg-secondary-200;
+    }
+
+    button:not(:disabled):active {
+      @apply bg-neutral-200;
+    }
+  }
+
+  .editor_left-buttons {
+    button {
+      @apply flex items-center gap-2;
+
+      svg {
+        @apply w-5;
+        @apply min-w-5;
+      }
+    }
+  }
+
+  .editor_right-buttons {
+    button {
+      @apply flex flex-col items-center gap-2;
+      @apply px-5;
+
+      svg {
+        @apply h-7;
+        @apply min-h-7;
+        @apply p-0 m-0;
+      }
+    }
+  }
+
+  .editor_round-button {
+    @apply flex items-center gap-2;
+    @apply px-3 py-2;
+    @apply border-1 border-neutral-500 rounded-2xl;
+    @apply bg-neutral-50 text-neutral-950;
+    @apply hover:bg-secondary-200 active:bg-neutral-100;
+    @apply disabled:text-neutral-600 disabled:cursor-default!;
+    @apply disabled:hover:bg-neutral-50;
+
+    svg {
+      @apply w-5 h-5;
+      @apply min-w-5;
+    }
+  }
 }

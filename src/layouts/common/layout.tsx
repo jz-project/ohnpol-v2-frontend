@@ -10,7 +10,7 @@ function Layout() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center">
       {header}
-      <main className="w-full flex flex-1 flex-col items-center mt-[68px] overflow-y-auto">
+      <main className="bg-transparent w-full flex flex-1 flex-col items-center mt-[68px]">
         <Outlet />
       </main>
       {footer}
