@@ -64,7 +64,7 @@ function ArtistsSwiper({ artists, keyPrefix }: ArtistsSwiperProps) {
                   'overflow-hidden',
                   'rounded-full',
                   'object-cover',
-                  'transition-all duration-200 ease-in-out',
+                  'transition-all duration-100 ease-in-out',
                   'hover:brightness-85 hover:cursor-pointer'
                 )}
                 src={artist.photo}

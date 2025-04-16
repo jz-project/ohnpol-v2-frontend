@@ -3,8 +3,16 @@
 @import './common/normalize.css';
 @import 'swiper/swiper-bundle.css';
 
+html,
 body {
   width: 100%;
+  height: 100%;
+  min-width: 500px;
+  /* scrollbar-gutter: auto;
+  overflow-y: overlay; */
+}
+
+body {
   font-family: 'Pretendard Variable', Pretendard, sans-serif;
   font-size: 1rem;
   line-height: 1.5;

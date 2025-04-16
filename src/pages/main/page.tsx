@@ -10,7 +10,7 @@ import Title from '../../layouts/common/title';
 
 function MainPage() {
   return (
-    <main className="bg-transparent w-full flex-1">
+    <>
       <Title>메인페이지</Title>
       <h1 className="sr-only">메인페이지</h1>
 
@@ -47,7 +47,7 @@ function MainPage() {
           </article>
         </section>
       </section>
-    </main>
+    </>
   );
 }
 
