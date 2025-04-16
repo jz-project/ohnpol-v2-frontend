@@ -1,14 +1,17 @@
 import EditorPageHeader from '@/components/EditorPageHeader';
 import Title from '@/layouts/common/title';
+import { useCanvasStore } from '@/stores/canvas';
 import { tm } from '@/utils/tw-merge';
-import LeftButtons from './components/LeftButtons';
-import ToolBox from './components/ToolBox';
+import { useEffect } from 'react';
+import Canvas from './components/Canvas';
 import {
   MoveBackwardIcon,
+  MoveForwardIcon,
   MoveToBackIcon,
   MoveToFrontIcon,
-  MoveForwardIcon,
 } from './components/Icons';
+import LeftButtons from './components/LeftButtons';
+import ToolBox from './components/ToolBox';
 import RoundButton from './components/tools/RoundButton';
 
 function Editor() {
@@ -18,6 +21,10 @@ function Editor() {
     { label: '앞으로', icon: <MoveForwardIcon /> },
     { label: '맨 앞으로', icon: <MoveToFrontIcon /> },
   ];
+
+  useEffect(() => {
+    useCanvasStore.getState().initCanvas();
+  }, []);
 
   return (
     <div
@@ -50,7 +57,7 @@ function Editor() {
                 'flex items-center justify-center'
               )}
             >
-              포토카드 공간
+              <Canvas />
             </div>
             <div className="editor_bottom-buttons flex gap-3">
               {bottomButtons.map((button) => (

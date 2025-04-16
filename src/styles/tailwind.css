@@ -109,29 +109,34 @@
   /* 편집기 페이지 */
   .editor_left-buttons,
   .editor_right-buttons {
-    button {
+    button,
+    label {
       @apply bg-neutral-50 text-neutral-950;
       @apply flex justify-center items-center;
       @apply py-2 px-4 rounded-t-2xl;
       @apply w-fit text-nowrap;
     }
 
-    button:disabled {
+    button:disabled,
+    label:disabled {
       @apply !cursor-default;
       @apply bg-secondary-100 text-neutral-600;
     }
 
-    button:not(:disabled):hover {
-      @apply bg-secondary-200;
+    button:not(:disabled):hover,
+    label:not(:disabled):hover {
+      @apply bg-secondary-200 cursor-pointer;
     }
 
-    button:not(:disabled):active {
+    button:not(:disabled):active,
+    label:not(:disabled):active {
       @apply bg-neutral-200;
     }
   }
 
   .editor_left-buttons {
-    button {
+    button,
+    label {
       @apply flex items-center gap-2;
 
       svg {
