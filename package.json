@@ -50,6 +50,7 @@
     "react-konva": "^19.0.3",
     "react-modal": "^3.16.3",
     "react-router": "^7.2.0",
+    "react-router-dom": "^7.6.0",
     "swiper": "^11.2.6",
     "use-image": "^1.1.1",
     "zustand": "^5.0.3"
